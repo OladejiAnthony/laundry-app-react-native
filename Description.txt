@@ -1,5 +1,14 @@
 
-#Expo-location - npx expo install expo-location
+#Expo-location - to get yser's location.
+ npx expo install expo-location
+
+#Expo vector-icons - 
+
+#Red shade css - https://cssgradient.io/shades-of-red/
+
+#Slider Box - npm i react-native-image-slider-box
+
+#<ScrollView> Component - we used the <ScrollView> component to scroll vertically down and up pages, and also to scroll horizontally right and left of the page.
 
 #
 
