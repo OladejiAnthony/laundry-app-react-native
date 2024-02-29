@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-export const CartSlice = cresteSlice({
+export const CartSlice = createSlice({
     name: "cart",
     initialState: {
         cart: [],
@@ -22,7 +22,7 @@ export const CartSlice = cresteSlice({
             state.cart = removeItem;
         },
 
-        incrementQuantity:(state,action) => {
+        incrementQuantity:(state, action) => {
             const itemPresent = state.cart.find((item) => item.id === action.payload.id);
             itemPresent.quantity++;
         },
