@@ -12,7 +12,6 @@ import {
   TextInput,
   ScrollView
 } from "react-native";
-//import { ScrollView } from 'react-native-gesture-handler'
 import * as Location from "expo-location";
 import { MaterialIcons, Feather } from "@expo/vector-icons";
 import Carousel from "../components/Carousel";
@@ -137,45 +136,50 @@ const HomeScreen = () => {
     ];
 
   return (
-    <ScrollView style={styles.container}>
-      <StatusBar style="auto" />
-      {/*Location & Profile*/}
-      <View style={{flexDirection: "row", alignItems: "center", padding: 10}}>
-        <MaterialIcons name="location-on" size={30} color="#fd5c63" />
-        <View style={{ fontSize: 18, fontWeight: "600" }}>
-          <Text>Home</Text>
-          <Text>{displayCurrentAddress}</Text>
+    <SafeAreaView style={styles.container}>
+
+      <ScrollView >
+         {/*Location & Profile*/}
+         <View style={{flexDirection: "row", alignItems: "center", padding: 10}}>
+          <MaterialIcons name="location-on" size={30} color="#fd5c63" />
+          <View style={{ fontSize: 18, fontWeight: "600" }}>
+            <Text>Home</Text>
+            <Text>{displayCurrentAddress}</Text>
+          </View>
+          <Pressable style={{marginLeft: "auto", marginRight: 7}}>
+            <Image
+              source={{
+                uri: "https://lh3.googleusercontent.com/ogw/AF2bZyiaRZafvFoQRmx220qEimQMcp6yg1hR9rBjo3lMJA=s32-c-mo",
+              }}
+              style={{ width: 40, height: 40, borderRadius: 20 }}
+            />
+          </Pressable>
         </View>
-        <Pressable style={{marginLeft: "auto", marginRight: 7}}>
-          <Image
-            source={{
-              uri: "https://lh3.googleusercontent.com/ogw/AF2bZyiaRZafvFoQRmx220qEimQMcp6yg1hR9rBjo3lMJA=s32-c-mo",
-            }}
-            style={{ width: 40, height: 40, borderRadius: 20 }}
+        {/*Search Bar */}
+        <View style={{padding: 10, margin: 10, flexDirection: "row", alignItems: "center", justifyContent: "space-between", borderWidth: 0.8, borderColor: "#C0C0C0", borderRadius: 7}}>
+          <TextInput  
+              placeholder="Search for items or More"
+
           />
-        </Pressable>
-      </View>
+          <Feather name="search" size={24} color="#fd5c63"  /> 
+        </View>
 
-      {/*Search Bar */}
-      <View style={{padding: 10, margin: 10, flexDirection: "row", alignItems: "center", justifyContent: "space-between", borderWidth: 0.8, borderColor: "#C0C0C0", borderRadius: 7}}>
-        <TextInput  
-            placeholder="Search for items or More"
+        {/*Image Carousel*/}
+        <Carousel />
 
-        />
-        <Feather name="search" size={24} color="#fd5c63"  /> 
-      </View>
+        {/*Services */}
+        <Services />
 
-      {/*Image Carousel*/}
-      <Carousel />
+        {/*Products */}
+        {services.map((item, index) => {
+          return (
+            <DressItem item={item} key={index} /> 
+          )
+        })}
 
-      {/*Services */}
-      <Services />
-      {/*Products */}
-      {services.map((item, index) => {
-        <DressItem item={item} key={index} /> 
-      })}
 
-    </ScrollView>
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
@@ -185,9 +189,9 @@ const styles = StyleSheet.create({
   container: {
     marginTop: 50,
     backgroundColor: "#F0F0F0",
-    flex: 1,
-    height: 100
+    flexGrow: 1,
   },
 });
 
 //
+

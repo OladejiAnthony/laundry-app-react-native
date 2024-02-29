@@ -38,7 +38,23 @@ const DressItem = ({ item }) => {
           </Text>
         </View>
 
-        <Pressable></Pressable>
+        <Pressable style={{ width: 80 }}>
+          <Text
+            style={{
+              borderColor: "gray",
+              borderWidth: 0.8,
+              borderRadius: 4,
+              marginVertical: 18,
+              color: "#088F8F",
+              textAlign: "center",
+              padding: 5,
+              fontSize: 17,
+              fontWeight: "bold",
+            }}
+          >
+            Add
+          </Text>
+        </Pressable>
       </Pressable>
     </View>
   );
@@ -48,4 +64,4 @@ export default DressItem;
 
 const styles = StyleSheet.create({});
 
-//50MINS
+//53 MINS
