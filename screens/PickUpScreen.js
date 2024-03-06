@@ -79,6 +79,7 @@ const PickUpScreen = () => {
   //Push to Cart
   const proceedToCart = () => {
     if (!selectedDate || !selectedTime || !delivery) {
+      //Alert message
       Alert.alert(
         "Empty or invalid",
         "Please select all the fields",
@@ -102,6 +103,8 @@ const PickUpScreen = () => {
     }
   };
 
+
+  
   return (
     <>
       <SafeAreaView style={{ marginTop: 50 }}>
@@ -213,11 +216,12 @@ const PickUpScreen = () => {
             ))}
           </ScrollView>
 
+          {/* Bottom Navigation*/}
           {total === 0 ? null : (
             <Pressable
               style={{
                 backgroundColor: "#088F8F",
-                marginTop: "auto",
+                marginTop: "50",
                 padding: 10,
                 marginBottom: 40,
                 margin: 15,
@@ -235,7 +239,7 @@ const PickUpScreen = () => {
                 </Text>
                 <Text
                   style={{
-                    fontSize: 15,
+                    fontSize: 12,
                     fontWeight: "400",
                     color: "white",
                     marginVertical: 6,

@@ -102,7 +102,7 @@ const HomeScreen = () => {
   const services = [
     {
       id: "0",
-      image: "https://cdn-icons-png.flaticon.com/128/4643/4643574.png",
+      image: "https://shopkiddieswearhouse.com/image/cache/catalog/2020%20DEC/Belk52-875x1000.jpg",
       name: "shirt",
       quantity: 0,
       price: 10,
@@ -116,7 +116,7 @@ const HomeScreen = () => {
     },
     {
       id: "12",
-      image: "https://cdn-icons-png.flaticon.com/128/9609/9609161.png",
+      image: "https://img.freepik.com/premium-vector/watercolor-hand-drawn-dress-gown-pastel-colors-isolated-white-background_847658-871.jpg",
       name: "dresses",
       quantity: 0,
       price: 10,
@@ -130,21 +130,21 @@ const HomeScreen = () => {
     },
     {
       id: "14",
-      image: "https://cdn-icons-png.flaticon.com/128/9431/9431166.png",
+      image: "https://janusmotorcycles.com/wp-content/uploads/2023/11/RacingSweaterBlack_Grey.webp",
       name: "Sweater",
       quantity: 0,
       price: 10,
     },
     {
       id: "15",
-      image: "https://cdn-icons-png.flaticon.com/128/3345/3345397.png",
+      image: "https://media.istockphoto.com/id/1483067375/photo/jeans-shorts-pants-for-men-isolated-on-white-background.jpg?s=612x612&w=0&k=20&c=CFBeq_-G2g8hcvM1vpon59dQjgXO2-NjJ6D4rI0k-Mw=",
       name: "shorts",
       quantity: 0,
       price: 10,
     },
     {
       id: "16",
-      image: "https://cdn-icons-png.flaticon.com/128/293/293241.png",
+      image: "https://assets.vogue.com/photos/64b01699395709dba3d825c5/3:4/w_748%2Cc_limit/Layer_9.jpg",
       name: "Sleeveless",
       quantity: 0,
       price: 10,
@@ -173,7 +173,10 @@ const HomeScreen = () => {
             <Text>Home</Text>
             <Text>{displayCurrentAddress}</Text>
           </View>
-          <Pressable style={{ marginLeft: "auto", marginRight: 7 }}>
+          <Pressable
+            onPress={() => navigation.navigate("Profile")}
+            style={{ marginLeft: "auto", marginRight: 7 }}
+          >
             <Image
               source={{
                 uri: "https://lh3.googleusercontent.com/ogw/AF2bZyiaRZafvFoQRmx220qEimQMcp6yg1hR9rBjo3lMJA=s32-c-mo",
@@ -263,4 +266,3 @@ const styles = StyleSheet.create({
 });
 
 //1hr, 40mins
-

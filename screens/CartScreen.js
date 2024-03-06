@@ -21,13 +21,16 @@ import { auth, db } from "../firebase";
 
 const CartScreen = () => {
   const cart = useSelector((state) => state.cart.cart);
-  const route = useRoute();
   const total = cart
     .map((item) => item.quantity * item.price)
     .reduce((curr, prev) => curr + prev, 0);
-  const navigation = useNavigation();
-  const userUid = auth.currentUser.uid;
+
   const dispatch = useDispatch();
+  const navigation = useNavigation();
+
+  const route = useRoute();
+
+  // const userUid = auth.currentUser.uid;
   const placeOrder = async () => {
     navigation.navigate("Order");
     dispatch(cleanCart());
@@ -39,7 +42,7 @@ const CartScreen = () => {
       },
       {
         merge: true,
-      }
+      },
     );
   };
   return (
@@ -48,6 +51,21 @@ const CartScreen = () => {
         {total === 0 ? (
           <View style={{ justifyContent: "center", alignItems: "center" }}>
             <Text style={{ marginTop: 40 }}>Your cart is empty</Text>
+            <View
+              style={{
+                padding: 10,
+                flexDirection: "row",
+                alignItems: "center",
+              }}
+            >
+              <Ionicons
+                onPress={() => navigation.goBack("Home")}
+                name="arrow-back"
+                size={24}
+                color="black"
+              />
+              <Text>Home</Text>
+            </View>
           </View>
         ) : (
           <>
@@ -67,6 +85,7 @@ const CartScreen = () => {
               <Text>Your Bucket</Text>
             </View>
 
+            {/*Cart */}
             <Pressable
               style={{
                 backgroundColor: "white",
@@ -159,6 +178,7 @@ const CartScreen = () => {
               ))}
             </Pressable>
 
+            {/*Billing */}
             <View style={{ marginHorizontal: 10 }}>
               <Text style={{ fontSize: 16, fontWeight: "bold", marginTop: 30 }}>
                 Billing Details
@@ -220,6 +240,7 @@ const CartScreen = () => {
                   </Text>
                 </View>
 
+                {/*Horizontal Line */}
                 <View
                   style={{
                     borderColor: "gray",
@@ -240,7 +261,7 @@ const CartScreen = () => {
                   <Text
                     style={{ fontSize: 18, fontWeight: "500", color: "gray" }}
                   >
-                    selected Date
+                    Selected Date:
                   </Text>
                   <Text
                     style={{
@@ -301,6 +322,8 @@ const CartScreen = () => {
                     {route.params.selectedTime}
                   </Text>
                 </View>
+
+                {/*Horizontal Line */}
                 <View
                   style={{
                     borderColor: "gray",
@@ -309,7 +332,7 @@ const CartScreen = () => {
                     marginTop: 10,
                   }}
                 />
-
+                {/*Total Payment*/}
                 <View
                   style={{
                     flexDirection: "row",
@@ -375,5 +398,3 @@ const CartScreen = () => {
 export default CartScreen;
 
 const styles = StyleSheet.create({});
-
-
