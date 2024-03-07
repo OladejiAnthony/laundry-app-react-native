@@ -179,7 +179,7 @@ const HomeScreen = () => {
           >
             <Image
               source={{
-                uri: "https://lh3.googleusercontent.com/ogw/AF2bZyiaRZafvFoQRmx220qEimQMcp6yg1hR9rBjo3lMJA=s32-c-mo",
+                uri: "https://cdn-icons-png.freepik.com/512/0/93.png",
               }}
               style={{ width: 40, height: 40, borderRadius: 20 }}
             />
