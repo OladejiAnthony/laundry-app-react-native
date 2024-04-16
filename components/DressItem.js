@@ -10,6 +10,7 @@ import { decrementQty, incrementQty } from "../redux/ProductSlice";
 
 
 const DressItem = ({ item }) => {
+  //console.log(item)
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.cart);
 

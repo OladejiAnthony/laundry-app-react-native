@@ -65,7 +65,6 @@ const RegisterScreen = () => {
 
     Toast.success("Registration Successful.")
     //navigation.navigate("Login")
-
   };
 
   return (

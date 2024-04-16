@@ -33,7 +33,7 @@ const HomeScreen = () => {
   }, []);
 
   const checkIfLocationEnabled = async () => {
-    let enabled = await Location.hasServicesEnabledAsync();
+    let enabled = await Location.hasServicesEnabledAsync(); //Checks whether location services are enabled by the user
     if (!enabled) {
       Alert.alert(
         "Location Services not enabbled",
@@ -53,7 +53,7 @@ const HomeScreen = () => {
   };
 
   const getCurrentLocation = async () => {
-    let { status } = await Location.requestForegroundPermissionsAsync();
+    let { status } = await Location.requestForegroundPermissionsAsync(); //Checks user's permissions for accessing location while the app is in the foreground
     if (status !== "granted") {
       Alert.alert(
         "Permission denied",
@@ -69,14 +69,14 @@ const HomeScreen = () => {
       );
     }
 
-    const { coords } = await Location.getCurrentPositionAsync();
+    const { coords } = await Location.getCurrentPositionAsync(); //Requests for one-time delivery of the user's current location
     //console.log(coords);
     if (coords) {
       const { latitude, longitude } = coords;
-      let response = await Location.reverseGeocodeAsync({
+      let response = await Location.reverseGeocodeAsync({ 
         latitude,
         longitude,
-      });
+      }); //Geocode an address string to latitude-longitude location.
       //console.log(response);
       for (let item of response) {
         let address = `${item.name} ${item.street}, ${item.region} State.`;
@@ -88,18 +88,19 @@ const HomeScreen = () => {
   // products data
   const product = useSelector((state) => state.product.product);
   const dispatch = useDispatch();
-  //console.log("product array", product);
+  //console.log(product);
 
+  //fetchProduct
   useEffect(() => {
     if (product.length > 0) return;
     const fetchProducts = () => {
-      services.map((service) => dispatch(getProducts(service)));
+      products.map((prod) => dispatch(getProducts(prod)));
     };
     fetchProducts(product);
   }, []);
   //console.log()
 
-  const services = [
+  const products = [
     {
       id: "0",
       image: "https://shopkiddieswearhouse.com/image/cache/catalog/2020%20DEC/Belk52-875x1000.jpg",
@@ -185,6 +186,7 @@ const HomeScreen = () => {
             />
           </Pressable>
         </View>
+        
         {/*Search Bar */}
         <View
           style={{
