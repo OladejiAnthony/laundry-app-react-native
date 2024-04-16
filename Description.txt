@@ -1,5 +1,5 @@
 
-#Expo-location - to get yser's location.
+#Expo-location - to get user's location.
  npx expo install expo-location
 
 #Expo vector-icons - 

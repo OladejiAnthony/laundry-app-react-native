@@ -40,7 +40,10 @@ const RegisterScreen = () => {
             onPress: () => console.log("Cancel Pressed"),
             style: "cancel",
           },
-          { text: "OK", onPress: () => console.log("OK Pressed") },
+          { 
+            text: "OK", 
+            onPress: () => console.log("OK Pressed") 
+          },
         ],
         { cancelable: false },
       );
@@ -58,8 +61,10 @@ const RegisterScreen = () => {
           phone: phone,
         });
       },
-      );
-      Toast.success("Registration Successful.")
+    );
+
+    Toast.success("Registration Successful.")
+    //navigation.navigate("Login")
 
   };
 
@@ -107,7 +112,7 @@ const RegisterScreen = () => {
                 borderBottomWidth: 1,
                 borderBottomColor: "gray",
                 marginLeft: 13,
-                width: 300,
+                width: 270,
                 marginVertical: 10,
               }}
             />
@@ -126,7 +131,7 @@ const RegisterScreen = () => {
                 borderBottomWidth: 1,
                 borderBottomColor: "gray",
                 marginLeft: 13,
-                width: 300,
+                width: 270,
                 marginVertical: 20,
               }}
             />
@@ -140,11 +145,11 @@ const RegisterScreen = () => {
               placeholder="Phone No"
               placeholderTextColor="black"
               style={{
-                fontSize: password ? 18 : 18,
+                fontSize: phone ? 18 : 18,
                 borderBottomWidth: 1,
                 borderBottomColor: "gray",
                 marginLeft: 13,
-                width: 300,
+                width: 270,
                 marginVertical: 10,
               }}
             />

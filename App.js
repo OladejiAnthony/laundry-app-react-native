@@ -1,6 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet } from 'react-native';
-import HomeScreen from './screens/HomeScreen';
 import store from './redux/store';
 import { Provider } from 'react-redux';
 import StackNavigator from './components/StackNavigator';

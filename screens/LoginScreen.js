@@ -107,7 +107,7 @@ const LoginScreen = () => {
                   borderBottomWidth: 1,
                   borderBottomColor: "gray",
                   marginLeft: 13,
-                  width: 300,
+                  width: 270,
                   marginVertical: 10,
                 }}
               />
@@ -130,7 +130,7 @@ const LoginScreen = () => {
                   borderBottomWidth: 1,
                   borderBottomColor: "gray",
                   marginLeft: 13,
-                  width: 300,
+                  width: 270,
                   marginVertical: 20,
                 }}
               />
